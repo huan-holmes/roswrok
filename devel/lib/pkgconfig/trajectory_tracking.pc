@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: trajectory_tracking
+Description: Description of trajectory_tracking
+Version: 0.0.0
+Cflags: -I/home/boocax/roswork/src/libtrajectory_tracking/trajectory_tracking/include
+Libs: -L/home/boocax/roswork/devel/lib 
+Requires: roscpp rospy std_msgs geometry_msgs nav_msgs angles boo_local_planner libback_stepping simple_global_planner custom_sys_msgs

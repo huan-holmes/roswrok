@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: agv_serial_screen
+Description: Description of agv_serial_screen
+Version: 0.0.0
+Cflags: -I/home/boocax/roswork/src/agv_serial_screen/include
+Libs: -L/home/boocax/roswork/devel/lib 
+Requires: roscpp tf

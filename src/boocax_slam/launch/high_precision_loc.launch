@@ -1,0 +1,18 @@
+<launch>
+<!--node pkg="boocax_slam" type="uwb_serial" name="uwb_serial" respawn="false" output="screen">
+</node>-->
+
+<!--<node pkg="boocax_slam" type="slam_processor" name="slam_node" respawn="false" output="screen">
+</node>-->
+<node pkg="boocax_slam" type="global_locate_node" name="global_locate_node" respawn="false" output="screen">
+</node>
+<node pkg="boocax_slam" type="local_locate_node" name="local_locate_node" respawn="false" output="screen">
+</node>
+<node pkg="boocax_slam" type="build_map_node" name="build_map_node" respawn="false" output="screen">
+</node>
+<node pkg="boocax_slam" type="imu_data_fetcher_node" name="imu_data_fetcher_node" respawn="false" output="screen">
+</node>
+<!--node pkg="boocax_slam" type="lidar_pos_verificate_node" name="lidar_pos_verificate_node" respawn="false" output="screen">
+</node-->
+<!--<include file="$(find robot_pose_ekf)/launch/loc_pose_ekf.launch" />-->
+</launch>

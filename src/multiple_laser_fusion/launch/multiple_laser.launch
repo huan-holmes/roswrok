@@ -1,0 +1,17 @@
+<launch>
+<!--启动多个激光驱动-->
+<!--include file="$(find sick_scan)/launch/sick_tim_5xx_twin.launch" /-->
+<!--启动多激光数据融合节点-->
+<node name="multiple_laser_fusion_node" pkg="multiple_laser_fusion" type="multiple_laser_fusion" respawn="false" output="screen">
+        <param name="frame_id" type="string" value="laser" />
+        <param name="input_topics" type="string" value="/under_scan" />
+        <param name="output_topic" type="string" value="/scan" />
+        <param name="angle_min" type="double" value="-2.35619449019" />
+        <param name="angle_max" type="double" value="2.35619449019" />
+        <param name="angle_increment" type="double" value="0.005236" />
+        <param name="time_increment" type="double" value="0.000061722" />
+        <param name="scan_time" type="double" value="0.05" />
+        <param name="range_min" type="double" value="0.05" />
+        <param name="range_max" type="double" value="10.0" />
+</node>
+</launch>

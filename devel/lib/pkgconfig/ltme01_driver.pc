@@ -1,0 +1,8 @@
+prefix=/home/boocax/lice_ws/devel
+
+Name: ltme01_driver
+Description: Description of ltme01_driver
+Version: 2.0.0
+Cflags: 
+Libs: -L/home/boocax/lice_ws/devel/lib 
+Requires: 

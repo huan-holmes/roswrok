@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: sub_path
+Description: Description of sub_path
+Version: 0.0.0
+Cflags: -I/home/boocax/roswork/src/libtrajectory_tracking/sub_path/include
+Libs: -L/home/boocax/roswork/devel/lib -lsub_path
+Requires: roscpp rospy std_msgs boo_local_planner simple_global_planner boocostmap_2d

@@ -1,0 +1,16 @@
+<launch>
+    <node pkg="boocax_base" type="boocax_base_socket" name="boocax_base_node">
+		<param name="speedup_step" value="30" type="int"/>
+		<param name="speeddown_step" value="30" type="int"/>
+		<param name="speedup_ang" value="100" type="int"/>
+		<param name="speeddown_ang" value="100" type="int"/>
+		<param name="vx_scale" value="1000.0" type="double"/>
+		<param name="vy_scale" value="1000.0" type="double"/>
+		<param name="va_scale" value="1024" type="double"/>
+		<param name="broadcast_odom" value="true" type="bool"/>
+
+		<param name="macanum_ip" type="string" value="192.168.0.21" />
+		<param name="macanum_port" type="int" value="8899" />
+    </node>
+	 
+</launch>

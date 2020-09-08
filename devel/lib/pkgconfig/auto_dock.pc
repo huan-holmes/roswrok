@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: auto_dock
+Description: Description of auto_dock
+Version: 0.0.0
+Cflags: -I/home/boocax/roswork/src/auto_dock/include
+Libs: -L/home/boocax/roswork/devel/lib 
+Requires: roscpp tf

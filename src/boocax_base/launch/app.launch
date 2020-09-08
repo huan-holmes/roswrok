@@ -1,0 +1,31 @@
+<launch>
+<node pkg="boocax_base" type="boocax_version_manager" name="boocax_version_manager" respawn="false" output="screen">
+</node>
+        <include file="$(find boocax_base)/launch/nav.launch" />
+        <!--include file="$(find usb_cam)/launch/usb_cam_four.launch" /-->
+        <!--include file="$(find ar_track_alvar)/launch/base_ar_four.launch" /-->
+
+        <!-- include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
+                <arg name="port" value="8080"/>
+        </include -->
+
+<!-- node pkg="boocax_base" type="play_node" name="play_node">
+        <param name="tts_port" value="3333" type="int"/>
+        <param name="tts_file_max_num" value="100" type="int"/>
+        <param name="tts_ip" type="string" value="192.168.0.102" />
+</node -->
+
+<node pkg="boocax_base" type="app" name="app" respawn="false" output="screen" />
+<!--node pkg="boocax_base" type="aoa_serial_node" name="aoa_serial" respawn="false" output="screen" /-->
+<node pkg="boocax_base" type="charge_node" name="charge_node" respawn="false" output="screen" />
+<!--node pkg="boocax_base" type="position_verification_node" name="position_verification" respawn="false" output="screen" /-->
+		
+<include file="$(find astra_launch)/launch/astra.launch" />
+<include file="$(find pointcloud_to_laserscan)/launch/sample_nodelet_ok.launch" />
+<!--include file="$(find point3d_cloud_filter)/launch/point3d_cloud_filter.launch" /-->
+
+<node pkg="boocax_base" type="auto_dock_node" name="auto_duck_node" respawn="false" output="screen" />
+<!--include file="$(find multiple_laser_fusion)/launch/multiple_laser.launch" /-->
+<include file="$(find boocax_slam)/launch/high_precision_loc.launch" />
+<node pkg="boocax_base" type="client_node" name="client_node" respawn="false" output="screen" />
+</launch>

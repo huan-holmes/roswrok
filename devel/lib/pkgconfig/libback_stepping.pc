@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: libback_stepping
+Description: Description of libback_stepping
+Version: 0.0.0
+Cflags: -I/home/boocax/roswork/src/libtrajectory_tracking/libback_stepping/include -I/home/boocax/roswork/devel/include -I/home/boocax/roswork/src/dwa_local_planner/include -I/home/boocax/roswork/src/boocostmap_2d/include -I/home/boocax/roswork/src/custom_sys_msgs/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include -I/usr/include/eigen3 -I/usr/include/pcl-1.7 -I/usr/include/ni -I/usr/include/vtk-6.2 -I/usr/include/jsoncpp -I/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent -I/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include -I/usr/lib/openmpi/include -I/usr/lib/openmpi/include/openmpi -I/usr/include/hdf5/openmpi -I/usr/include/x86_64-linux-gnu -I/usr/include/freetype2 -I/usr/include/x86_64-linux-gnu/freetype2 -I/usr/include/python2.7 -I/usr/include/tcl -I/usr/include/libxml2
+Libs: -L/home/boocax/roswork/devel/lib 
+Requires: std_msgs geometry_msgs nav_msgs roscpp angles boo_local_planner

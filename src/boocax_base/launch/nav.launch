@@ -1,0 +1,22 @@
+<launch>
+
+<include file="$(find boocax_base)/launch/laser.launch" />
+
+<node pkg="boocax_base" type="boocax_base_serial" name="boocax_base_node" respawn="false" output="screen">
+	<param name="speedup_step" value="80" type="int"/>
+	<param name="speeddown_step" value="80" type="int"/>
+	<param name="speedup_ang" value="160" type="int"/>
+	<param name="speeddown_ang" value="160" type="int"/>
+	<param name="vx_scale" value="1000.0" type="double"/>
+	<param name="vy_scale" value="1000.0" type="double"/>
+	<param name="va_scale" value="1000.0" type="double"/>
+</node>
+	
+<node pkg="boomove_base" type="move_base" respawn="false" name="move_base" output="screen">
+	<rosparam command="load" file="$(find teb_local_planner)/config/diff_drive/teb_local_planner_params.yaml" />
+	<rosparam command="load" file="$(find teb_local_planner)/config/diff_drive/costmap_converter_params.yaml" />
+	<remap from="/move_base/TebLocalPlannerROS/local_plan" to="/boomove_base/BooCaxPlaner/local_plan" />
+	<remap from="/move_base/TebLocalPlannerROS/global_plan" to="/boomove_base/BooCaxPlaner/global_plan" />
+</node>
+
+</launch>

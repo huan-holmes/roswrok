@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: sonar_fliters
+Description: Description of sonar_fliters
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/boocax/roswork/devel/lib -lsonar_fliters
+Requires: roscpp rospy std_msgs sensor_msgs boocax_base

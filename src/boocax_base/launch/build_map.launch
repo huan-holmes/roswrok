@@ -1,0 +1,52 @@
+<launch>
+	<include file="$(find boocax_base)/launch/base_link.launch" />
+	<include file="$(find boocax_base)/launch/laser.launch" />
+     
+    <node pkg="boocax_base" type="uwb_location" name="uwb_location" output="screen">
+
+		<param name="build_map" value="true" type="bool"/>
+		<param name="log_imu" value="false" type="bool"/>
+		
+		<param name="north_to_map_yaw" value="90" type="double"/>
+		
+		<param name="base_to_uwb_x" value="-0.16" type="double"/>
+		<param name="base_to_uwb_y" value="0" type="double"/>
+		
+		<param name="port_uwb" type="string" value="/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A50285BI-if00-port0" />
+		<param name="baudrate_uwb" type="int" value="9600" />
+		<param name="port_imu" type="string" value="/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0" />
+		<param name="baudrate_imu" type="int" value="9600" />
+	
+		<param name="anchors" type="string" value="[[2,5.7028,-1.8496,0.5,0.0],[3,0.2219,-2.9081,0.85,0.0],[4,-0.8480,2.3220,0.79,0.0]]" />
+    </node>
+	
+    <node pkg="hector_mapping" type="hector_mapping" name="hector_height_mapping" output="screen">
+		<param name="scan_topic" value="scan" />
+		<param name="base_frame" value="base_link" />
+		<param name="odom_frame" value="odom" />
+		<param name="map_frame" value="map" />
+			
+		<param name="output_timing" value="false"/>
+		<param name="advertise_map_service" value="true"/>
+		<param name="use_tf_scan_transformation" value="true"/>
+		<param name="use_tf_pose_start_estimate" value="false"/>
+		<param name="pub_map_odom_transform" value="true"/>
+		<param name="map_with_known_poses" value="false"/>
+
+		<param name="map_pub_period" value="0.5"/>
+		<param name="update_factor_free" value="0.45"/>
+			
+		<param name="map_update_distance_thresh" value="0.02"/>
+		<param name="map_update_angle_thresh" value="0.1"/>
+			
+		<param name="map_resolution" value="0.05"/>
+		<param name="map_size" value="1024"/>
+		<param name="map_start_x" value="0.5"/>
+		<param name="map_start_y" value="0.5"/>
+    </node>
+
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
+		<arg name="port" value="8080"/>
+	</include>
+	
+</launch>

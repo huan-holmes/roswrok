@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+ <node pkg="point3d_cloud_filter" type="passthrough" name="Pass_Through" respawn="false">
+  <remap from="/cloud_input" to="/ifm3d/camera/cloud" />
+ </node>
+ <node pkg="point3d_cloud_filter" type="radius_outlier_removal" name="Radius_OutlierRemoval" respawn="false"/>
+ <node pkg="point3d_cloud_filter" type="voxel_grid" name="Voxel_Grid" respawn="false"/>
+
+</launch>

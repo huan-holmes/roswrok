@@ -1,0 +1,27 @@
+<package>
+  <name>simple_global_planner</name>
+  <version>1.0.0</version>
+  <description>simple_global_planner</description>
+  <maintainer email="hou137851695@gmail.com">Housx</maintainer>
+  <license>BSD</license>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>boocostmap_2d</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>angles</build_depend>
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <run_depend>roscpp</run_depend>
+  <run_depend>boocostmap_2d</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>angles</run_depend>
+
+  <export>
+    <cpp lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -lsimple_global_planner" cflags="-I${prefix}/include"/>
+    <nav_core plugin="${prefix}/bgp_plugin.xml"/>
+  </export>
+</package>

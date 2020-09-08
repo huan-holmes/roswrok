@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: graph_path
+Description: Description of graph_path
+Version: 0.0.0
+Cflags: -I/home/boocax/roswork/src/graph_path/include
+Libs: -L/home/boocax/roswork/devel/lib 
+Requires: roscpp rospy std_msgs boo_local_planner

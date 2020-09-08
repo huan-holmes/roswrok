@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: robot_model
+Description: Description of robot_model
+Version: 0.0.0
+Cflags: -I/home/boocax/roswork/src/robot_model/include
+Libs: -L/home/boocax/roswork/devel/lib -lrobot_model
+Requires: roscpp std_msgs geometry_msgs boo_local_planner custom_sys_msgs

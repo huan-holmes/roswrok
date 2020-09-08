@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: boo_local_planner
+Description: Description of boo_local_planner
+Version: 1.13.0
+Cflags: -I/home/boocax/roswork/src/dwa_local_planner/include
+Libs: -L/home/boocax/roswork/devel/lib 
+Requires: boocostmap_2d geometry_msgs nav_msgs roscpp tf

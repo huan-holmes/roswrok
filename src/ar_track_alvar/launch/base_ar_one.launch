@@ -1,0 +1,18 @@
+<launch>
+<group ns = "0">
+	<arg name="marker_size" default="6" />
+	<arg name="max_new_marker_error" default="0.02" />
+	<arg name="max_track_error" default="0.02" />
+        
+        <arg name="cam_image_topic" default="/0/usb_cam/image_raw" />
+       <arg name="cam_info_topic" default="/0/usb_cam/camera_info" />
+        
+	<arg name="output_frame" default="/usb_cam0" />
+        <arg name="output_frame1" default="/base_link" />
+	<arg name="bundle_files" default="$(find ar_track_alvar)/launch/data0/table_1_2.xml $(find ar_track_alvar)/launch/data0/table_3_4.xml $(find ar_track_alvar)/launch/data0/table_5_6.xml $(find ar_track_alvar)/launch/data0/table_7_8.xml $(find ar_track_alvar)/launch/data0/table_9_10.xml $(find ar_track_alvar)/launch/data0/table_11_12.xml $(find ar_track_alvar)/launch/data0/table_13_14.xml $(find ar_track_alvar)/launch/data0/table_15_16.xml $(find ar_track_alvar)/launch/data0/table_17_18.xml $(find ar_track_alvar)/launch/data0/table_19_20.xml $(find ar_track_alvar)/launch/data0/table_21_22.xml $(find ar_track_alvar)/launch/data0/table_23_24.xml $(find ar_track_alvar)/launch/data0/table_25_26.xml $(find ar_track_alvar)/launch/data0/table_27_28.xml $(find ar_track_alvar)/launch/data0/table_29_30.xml $(find ar_track_alvar)/launch/data0/table_31_32.xml $(find ar_track_alvar)/launch/data0/table_33_34.xml $(find ar_track_alvar)/launch/data0/table_35_36.xml $(find ar_track_alvar)/launch/data0/table_37_38.xml $(find ar_track_alvar)/launch/data0/table_39_40.xml $(find ar_track_alvar)/launch/data0/table_41_42.xml $(find ar_track_alvar)/launch/data0/table_43_44.xml $(find ar_track_alvar)/launch/data0/table_45_46.xml $(find ar_track_alvar)/launch/data0/table_47_48.xml $(find ar_track_alvar)/launch/data0/table_49_50.xml $(find ar_track_alvar)/launch/data0/table_51_52.xml $(find ar_track_alvar)/launch/data0/table_53_54.xml $(find ar_track_alvar)/launch/data0/table_55_56.xml $(find ar_track_alvar)/launch/data0/table_57_58.xml $(find ar_track_alvar)/launch/data0/table_59_60.xml $(find ar_track_alvar)/launch/data0/table_61_62.xml $(find ar_track_alvar)/launch/data0/table_63_64.xml $(find ar_track_alvar)/launch/data0/table_65_66.xml $(find ar_track_alvar)/launch/data0/table_67_68.xml $(find ar_track_alvar)/launch/data0/table_69_70.xml $(find ar_track_alvar)/launch/data0/table_71_72.xml $(find ar_track_alvar)/launch/data0/table_73_74.xml $(find ar_track_alvar)/launch/data0/table_75_76.xml $(find ar_track_alvar)/launch/data0/table_77_78.xml $(find ar_track_alvar)/launch/data0/table_79_80.xml $(find ar_track_alvar)/launch/data0/table_81_82.xml $(find ar_track_alvar)/launch/data0/table_83_84.xml $(find ar_track_alvar)/launch/data0/table_85_86.xml $(find ar_track_alvar)/launch/data0/table_87_88.xml $(find ar_track_alvar)/launch/data0/table_89_90.xml $(find ar_track_alvar)/launch/data0/table_91_92.xml $(find ar_track_alvar)/launch/data0/table_93_94.xml $(find ar_track_alvar)/launch/data0/table_95_96.xml $(find ar_track_alvar)/launch/data0/table_97_98.xml $(find ar_track_alvar)/launch/data0/table_99_100.xml" />
+
+	<node name="ar_track_alvar" pkg="ar_track_alvar" type="ar_link" respawn="false" output="screen" args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame) $(arg output_frame1) $(arg bundle_files)" />
+
+</group>
+
+</launch>

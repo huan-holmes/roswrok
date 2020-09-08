@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: sicktoolbox
+Description: Description of sicktoolbox
+Version: 1.0.103
+Cflags: -I/home/boocax/roswork/src/sicktoolbox-catkin/include
+Libs: -L/home/boocax/roswork/devel/lib -lSickLD -lSickLMS1xx -lSickLMS2xx -lSickNAV350
+Requires: 

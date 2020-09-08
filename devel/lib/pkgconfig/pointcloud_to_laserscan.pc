@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: pointcloud_to_laserscan
+Description: Description of pointcloud_to_laserscan
+Version: 1.3.1
+Cflags: -I/home/boocax/roswork/src/pointcloud_to_laserscan/include
+Libs: -L/home/boocax/roswork/devel/lib -lpointcloud_to_laserscan
+Requires: roscpp message_filters nodelet sensor_msgs tf2 tf2_ros

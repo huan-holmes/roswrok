@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: point3d_cloud_filter
+Description: Description of point3d_cloud_filter
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/boocax/roswork/devel/lib 
+Requires: 

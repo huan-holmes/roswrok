@@ -1,0 +1,6 @@
+# goal: a path to follow
+teb_local_planner/AgvTrajectoryMsg path
+---
+# no result currently
+---
+geometry_msgs/PoseStamped base_position

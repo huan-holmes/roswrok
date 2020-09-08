@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: agv
+Description: Description of agv
+Version: 0.0.0
+Cflags: -I/home/boocax/roswork/src/agv/include
+Libs: -L/home/boocax/roswork/devel/lib 
+Requires: boo_local_planner boocostmap_2d geometry_msgs nav_msgs pluginlib roscpp rospy std_msgs tf tf_conversions simple_global_planner trajectory_tracking libback_stepping sub_path robot_model custom_sys_msgs sensor_msgs laser_line_extraction

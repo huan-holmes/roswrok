@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: boocax_base
+Description: Description of boocax_base
+Version: 0.0.0
+Cflags: -I/home/boocax/roswork/devel/include -I/home/boocax/roswork/src/boocax_base/include
+Libs: -L/home/boocax/roswork/devel/lib 
+Requires: roscpp tf nav_msgs

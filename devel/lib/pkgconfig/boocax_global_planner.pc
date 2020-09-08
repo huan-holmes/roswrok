@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: boocax_global_planner
+Description: Description of boocax_global_planner
+Version: 1.13.0
+Cflags: -I/home/boocax/roswork/src/boocax_global_planner/include
+Libs: -L/home/boocax/roswork/devel/lib 
+Requires: boocostmap_2d geometry_msgs nav_msgs roscpp tf

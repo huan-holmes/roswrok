@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="camera" default="camera" />
+
+   <node pkg="tf" type="static_transform_publisher" name="base_to_camera_broadcaster" args="0.26 0 0.24  0 0 0 base_link camera_link 100" />
+    <!--node pkg="tf" type="static_transform_publisher" name="base_to_ifm_broadcaster" args="0.26 0 0.55  0 -0.436 0  /base_link ifm3d/camera_link 100" /--> 
+    <node pkg ="nodelet" type="nodelet" name="standalone_nodelet" args="manager"/>
+    <node pkg="nodelet" type="nodelet" name="pointcloud_to_laserscan" args="load pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet standalone_nodelet">
+	<remap from="cloud_in" to="/camera/depth/points"/>
+        <!--remap from="cloud_in" to="/ifm3d/camera/cloud"/-->
+        <rosparam>
+            camera_name: 1 #1:astra  2:ifm
+            target_frame1: base_link
+            pose_x: 0.26
+            pose_y: 0
+            pose_z: 0.24
+            pose_angle: 0  ##相机上下倾斜角度
+            transform_tolerance: 0.01
+            min_height: 0.2
+            max_height: 1.5
+            angle_min: -1.58539 # -M_PI/4
+            angle_max: 1.58539 # M_PI/4
+            angle_increment: 0.0087 # M_PI/360.0
+            scan_time: 0.03
+            range_min: 0.4
+            range_max: 8.0
+            use_inf: true
+            concurrency_level: 1
+        </rosparam>
+
+    </node>
+
+</launch>

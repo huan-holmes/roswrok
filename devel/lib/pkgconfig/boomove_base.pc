@@ -1,0 +1,8 @@
+prefix=/home/boocax/roswork/devel
+
+Name: boomove_base
+Description: Description of boomove_base
+Version: 1.13.0
+Cflags: -I/home/boocax/roswork/src/boomove_base/include -I/usr/include/suitesparse -I/opt/ros/kinetic/include/g2o
+Libs: -L/home/boocax/roswork/devel/lib -lamd -lbtf -lcamd -lccolamd -lcholmod -lcolamd -lcxsparse -lklu -lumfpack -lspqr /opt/ros/kinetic/lib/libg2o_csparse_extension.so /opt/ros/kinetic/lib/libg2o_core.so /opt/ros/kinetic/lib/libg2o_stuff.so /opt/ros/kinetic/lib/libg2o_types_slam2d.so /opt/ros/kinetic/lib/libg2o_types_slam3d.so /opt/ros/kinetic/lib/libg2o_solver_cholmod.so /opt/ros/kinetic/lib/libg2o_solver_pcg.so /opt/ros/kinetic/lib/libg2o_solver_csparse.so /opt/ros/kinetic/lib/libg2o_incremental.so
+Requires: boocostmap_2d geometry_msgs nav_msgs roscpp tf costmap_converter actionlib_msgs

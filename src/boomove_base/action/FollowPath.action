@@ -1,0 +1,6 @@
+# goal: a path to follow
+nav_msgs/Path path
+---
+# no result currently
+---
+geometry_msgs/PoseStamped base_position

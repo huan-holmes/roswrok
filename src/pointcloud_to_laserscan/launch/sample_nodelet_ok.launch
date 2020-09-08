@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="camera" default="camera" />
+
+    <!-- start sensor-->
+    <!--include file="$(find openni2_launch)/launch/openni2.launch">
+        <arg name="camera" default="$(arg camera)"/>
+    </include-->
+   <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0  0 0 0  /camera_base /camera_link 100" />      #camera_base方向，X-正前方，y-正左方，z-正上方
+    <node pkg ="nodelet" type="nodelet" name="standalone_nodelet" args="manager"/>
+    <!-- push pointcloud_to_laserscan nodelet into sensor's nodelet manager-->
+    <node pkg="nodelet" type="nodelet" name="pointcloud_to_laserscan" args="load pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet standalone_nodelet">
+
+        <remap from="cloud_in" to="$(arg camera)/depth/points"/>
+        <!--remap from="cloud_in" to="/filtered_RadiusOutlierRemoval"/-->    #不同传感器修改点云数据
+        <!--remap from="scan" to="$(arg camera)/scan"/-->
+        <rosparam>
+            <!--target_frame: camera_link # Leave disabled to output scan in pointcloud frame-->
+            transform_tolerance: 0.01
+            target_frame1: camera_base
+            min_height: 0.1                               #最小测量高度[米]
+            max_height: 1                               #最大测量高度[米]
+
+            angle_pose: 0                           #相机上下倾斜角度，向上倾斜为正，向下倾斜为负[弧度]
+            angle_min: -1.57 # -M_PI/4                    #scan的开始角度[弧度]
+            angle_max: 1.57 # M_PI/4                      #scan的结束角度[弧度]
+            angle_increment: 0.0087 # M_PI/360.0          #测量角度间的距离[弧度]
+            scan_time: 0.2                                #扫描间的时间[秒]
+            range_min: 0.4                                #最小测量距离[米]
+            range_max: 4.0                                #最大测量距离[米]
+            use_inf: true
+
+            # Concurrency level, affects number of pointclouds queued for processing, thread number governed by nodelet manager
+            # 0 : Detect number of cores
+            # 1 : Single threaded
+            # 2->inf : Parallelism level
+            concurrency_level: 1
+        </rosparam>
+
+    </node>
+
+</launch>
